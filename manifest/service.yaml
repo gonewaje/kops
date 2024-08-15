@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: ui-service
+spec:
+  type: NodePort  # Change to NodePort
+  selector:
+    app: ui
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 3000
+    nodePort: 30001  # Choose a random port between 30000 and 32767
